@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio | Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a class="brand" href="index.html">Sabin's<span>Portfolio</span></a>
+
+        <div class="nav-links" aria-label="Primary navigation">
+          <a class="active" href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://fi.linkedin.com/" target="_blank">LinkedIn</a>
+        </div>
+
+        <button class="menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="mobileMenu">
+          ☰ <span>Menu</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-panel" data-mobile-panel>
+      <a class="active" href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section>
+      <div class="hero card">
+        <div>
+          <h1>Hi, I’m Sabin Ghimire 👋</h1>
+          <p>
+            I’m an automation engineer studying in SEAMK. I work with PLC programming, HMI integration, and industrial control systems to automate manufacturing processes. I create responsive websites using HTML, CSS, and JavaScript, focusing on clean layouts, smooth interactions, and cross-device compatibility
+          <div class="badges">
+            <div class="badge">HTML</div>
+            <div class="badge">CSS</div>
+            <div class="badge">JavaScript</div>
+            <div class="badge">Responsive Design</div>
+            <div class="badge">Plc Programming</div>
+            <div class="badge">Machine Automation</div>
+            <div class="badge">Data Structure and Algorithm</div>
+            <div class="badge">OOP</div>
+            <div class="badge">Software Engineer</div>
+          </div>
+        </div>
+
+        <div class="profile">
+          <img src="assets/profile-img.png" alt="Profile photo" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="media-grid">
+        <div class="card">
+          <h2>Mechatronics Experimentation</h2>
+          <p>Designing and implementationing of a gantry-based automation platform.</p>
+          <div style="margin-top:12px;">
+            <img src="assets/pickingmachine.png" class="home-card-img" alt="Featured project image" style="border-radius:14px; border:1px solid #e7e7ee;" />
+          </div>
+        </div>
+
+        <div class="card video-wrap">
+          <h2>PICKING MACHINE</h2>
+          <p></p>
+          <div style="margin-top:12px;">
+            <video controls="false" autoplay="autoplay" loop>
+              <source src="assets/Video.mov" type="video/mp4"  />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>About Me</h2>
+        <p style="margin-top:10px;">
+          I enjoy building fast, accessible UI and learning new technologies.
+          I’m currently working on small web apps and portfolio projects.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Sabin Ghimire. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

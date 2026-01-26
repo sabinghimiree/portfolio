@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio | Projects</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a class="brand" href="index.html">My<span>Portfolio</span></a>
+
+        <div class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a class="active" href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <button class="menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="mobileMenu">
+          ☰ <span>Menu</span>
+        </button>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="mobile-panel" data-mobile-panel>
+      <a href="index.html">Home</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <div class="card">
+        <h1>Projects</h1>
+        <p style="margin-top:10px; color:#333;">
+          A few sample projects. Replace images, text, and links with your own.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="projects-grid">
+        <article class="card project">
+          <img src="assets/project1.jpg" alt="Project 1 image" />
+          <h3>Project One</h3>
+          <p>Simple landing page with responsive layout and clean UI.</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <img src="assets/project2.jpg" alt="Project 2 image" />
+          <h3>Project Two</h3>
+          <p>JavaScript mini app with interactive components.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">UI</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <img src="assets/project1.jpg" alt="Project 3 image" />
+          <h3>Project Three</h3>
+          <p>Portfolio section with image + video demo.</p>
+          <div class="tags">
+            <span class="tag">Responsive</span>
+            <span class="tag">Media</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Your Name.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

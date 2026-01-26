@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio | Contact</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a class="brand" href="index.html">My<span>Portfolio</span></a>
+
+        <div class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a class="active" href="contact.html">Contact</a>
+        </div>
+
+        <button class="menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="mobileMenu">
+          ☰ <span>Menu</span>
+        </button>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="mobile-panel" data-mobile-panel>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a class="active" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <div class="card">
+        <h1>Contact Me</h1>
+        <p style="margin-top:10px; color:#333;">
+          Send a message using the form below (demo only).
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <form id="contactForm">
+          <div>
+            <label for="name"><strong>Name</strong></label><br />
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div>
+            <label for="email"><strong>Email</strong></label><br />
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div>
+            <label for="message"><strong>Message</strong></label><br />
+            <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Your Name.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
