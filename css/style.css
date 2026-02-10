@@ -84,6 +84,7 @@ header {
     padding: 10px 12px;
     border-radius: 12px;
     cursor: pointer;
+
 }
 
 /* Mobile menu panel */
@@ -289,9 +290,11 @@ footer {
     }
 
     .menu-btn {
-        display: inline-flex;
+        color: black;
+        display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
+        gap: .5rem;
     }
 
     .projects-grid {

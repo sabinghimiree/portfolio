@@ -1,30 +1,40 @@
-// Mobile menu open/close
+// ===== Mobile Menu Toggle =====
 const menuBtn = document.querySelector("[data-menu-btn]");
 const mobilePanel = document.querySelector("[data-mobile-panel]");
 
+function toggleMenu(button, panel, forceClose = false) {
+  const isOpen = forceClose ? false : panel.classList.toggle("open");
+
+  panel.classList.toggle("open", isOpen);
+  button.setAttribute("aria-expanded", String(isOpen));
+
+  const label = button.querySelector("span");
+  if (label) {
+    label.textContent = isOpen ? "Close" : "Menu";
+  }
+}
+
 if (menuBtn && mobilePanel) {
+  // Open / close menu
   menuBtn.addEventListener("click", () => {
-    const isOpen = mobilePanel.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", String(isOpen));
-    menuBtn.querySelector("span").textContent = isOpen ? "Close" : "Menu";
+    toggleMenu(menuBtn, mobilePanel);
   });
 
   // Close menu when a link is clicked (mobile)
   mobilePanel.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      mobilePanel.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-      menuBtn.querySelector("span").textContent = "Menu";
+      toggleMenu(menuBtn, mobilePanel, true);
     });
   });
 }
 
-// Optional: simple contact form demo (no backend)
+// ===== Contact Form (Demo Only) =====
 const contactForm = document.querySelector("#contactForm");
+
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    alert("Message sent! (Demo only — connect a backend to really send emails.)");
+    alert("Message sent! (Demo only — connect a backend to send emails.)");
     contactForm.reset();
   });
 }
