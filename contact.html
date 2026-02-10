@@ -71,7 +71,10 @@
       <p>© <span id="year"></span> Sabin Ghimire.</p>
     </div>
   </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () { emailjs.init("76kAlcxApm1sEE3S1"); })();
+  </script>
   <script src="js/main.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();

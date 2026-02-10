@@ -35,7 +35,7 @@ if (contactForm) {
 
     // Replace these with your EmailJS keys
     const serviceID = "service_3s4ioyu";
-    const templateID = "template_fjplOw9";
+    const templateID = "template_fjpl0w9";
     const publicKey = "76kAlcxApm1sEE3S1";
 
     emailjs.sendForm(serviceID, templateID, this, publicKey)
