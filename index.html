@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio | Home</title>
+  <title>Sabin | Home</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
 
-  <header>
+<body class="site">
+
+  <header class="site-header">
     <div class="container">
-      <nav  class="navbar">
-        <a class="brand" href="index.html">Sabin's<span>Portfolio</span></a>
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="index.html">Sabin</a>
 
-        <div class="nav-links" aria-label="Primary navigation">
+        <div class="nav-links">
           <a class="active" href="index.html">Home</a>
           <a href="projects.html">Projects</a>
           <a href="contact.html">Contact</a>
-          <a href="https://fi.linkedin.com/" target="_blank">LinkedIn</a>
+          <a href="https://fi.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
 
         <button class="menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="mobileMenu">
@@ -34,20 +35,25 @@
     </div>
   </header>
 
-  <main class="container">
-
+  <main class="site-main container">
     <section>
       <div class="hero card">
         <div>
           <h1>Hi, I’m Sabin Ghimire 👋</h1>
+
+          <!-- ✅ FIX: Properly closed paragraph -->
           <p>
-            I’m an automation engineer studying in SEAMK. I work with PLC programming, HMI integration, and industrial control systems to automate manufacturing processes. I create responsive websites using HTML, CSS, and JavaScript, focusing on clean layouts, smooth interactions, and cross-device compatibility
+            I’m an automation engineer studying in SEAMK. I work with PLC programming, HMI integration, and industrial
+            control systems to automate manufacturing processes. I create responsive websites using HTML, CSS, and
+            JavaScript, focusing on clean layouts, smooth interactions, and cross-device compatibility.
+          </p>
+
           <div class="badges">
             <div class="badge">HTML</div>
             <div class="badge">CSS</div>
             <div class="badge">JavaScript</div>
             <div class="badge">Responsive Design</div>
-            <div class="badge">Plc Programming</div>
+            <div class="badge">PLC Programming</div>
             <div class="badge">Machine Automation</div>
             <div class="badge">Data Structure and Algorithm</div>
             <div class="badge">OOP</div>
@@ -65,19 +71,25 @@
       <div class="media-grid">
         <div class="card">
           <h2>Mechatronics Experimentation</h2>
-          <p>Designing and implementationing of a gantry-based automation platform.</p>
+          <p>Designing and implementing a gantry-based automation platform.</p>
+
           <div style="margin-top:12px;">
-            <img src="assets/pickingmachine.png" class="home-card-img" alt="Featured project image" style="border-radius:14px; border:1px solid #e7e7ee;" />
+            <img
+              src="assets/pickingmachine.png"
+              class="home-card-img"
+              alt="Featured project image"
+            />
           </div>
         </div>
 
         <div class="card video-wrap">
           <h2>PICKING MACHINE</h2>
-          <p></p>
+
           <div style="margin-top:12px;">
-            <video controls="false" autoplay="autoplay" loop>
-              <source src="assets/Video.mov" type="video/mp4"  />
-              Your browser does not support the video tag.
+            
+            <video controls autoplay muted loop playsinline>
+              <source src="assets/video.mov" type="video/mp4" />
+              
             </video>
           </div>
         </div>
@@ -88,25 +100,24 @@
       <div class="card">
         <h2>About Me</h2>
         <p style="margin-top:10px;">
-        I work with Siemens PLCs and HMI systems to build efficient and user-friendly industrial automation solutions.
+          I work with Siemens PLCs and HMI systems to build efficient and user-friendly industrial automation solutions.
         </p>
       </div>
     </section>
-
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container">
       <p>© <span id="year"></span> Sabin Ghimire. All rights reserved.</p>
     </div>
   </footer>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function () { emailjs.init("76kAlcxApm1sEE3S1"); })();
-  </script>
-  <script src="js/main.js"></script>
-  <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
