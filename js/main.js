@@ -3,7 +3,7 @@ const menuBtn = document.querySelector("[data-menu-btn]");
 const mobilePanel = document.querySelector("[data-mobile-panel]");
 
 function toggleMenu(button, panel, forceClose = false) {
-  const isOpen = forceClose ? false : panel.classList.toggle("open");
+  const isOpen = forceClose ? false : !panel.classList.contains("open");
 
   panel.classList.toggle("open", isOpen);
   button.setAttribute("aria-expanded", String(isOpen));
@@ -15,12 +15,10 @@ function toggleMenu(button, panel, forceClose = false) {
 }
 
 if (menuBtn && mobilePanel) {
-  // Open / close menu
   menuBtn.addEventListener("click", () => {
     toggleMenu(menuBtn, mobilePanel);
   });
 
-  // Close menu when a link is clicked (mobile)
   mobilePanel.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       toggleMenu(menuBtn, mobilePanel, true);
@@ -28,13 +26,25 @@ if (menuBtn && mobilePanel) {
   });
 }
 
-// ===== Contact Form (Demo Only) =====
+// ===== Contact Form (EmailJS) =====
 const contactForm = document.querySelector("#contactForm");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    alert("Message sent! (Demo only — connect a backend to send emails.)");
-    contactForm.reset();
+
+    // Replace these with your EmailJS keys
+    const serviceID = "service_3s4ioyu";
+    const templateID = "template_fjplOw9";
+    const publicKey = "76kAlcxApm1sEE3S1";
+
+    emailjs.sendForm(serviceID, templateID, this, publicKey)
+      .then(() => {
+        alert("Message sent successfully!");
+        contactForm.reset();
+      }, (err) => {
+        console.error(err);
+        alert("Failed to send message. Try again.");
+      });
   });
 }
