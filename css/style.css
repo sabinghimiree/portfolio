@@ -15,7 +15,8 @@ body {
   line-height: 1.6;
   color: #080707;
   background: #f6f7fb;
-  padding-bottom: 60px; /* match footer height */
+
+  padding-bottom: 60px;
 
 
   /* Sticky footer setup */
@@ -24,8 +25,79 @@ body {
   flex-direction: column;
 }
 
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #f2f2f2;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #0a66c2;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0a66c2;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.card.project {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tag:hover {
+  background: #0a66c2;
+  color: white;
+}
+
+.card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.projects-grid:hover .card.project {
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.projects-grid .card.project:hover {
+  opacity: 1;
+}
+
 main {
-  flex: 1; /* main grows so footer stays at bottom */
+  flex: 1;
+  /* main grows so footer stays at bottom */
 }
 
 a {
@@ -159,8 +231,8 @@ section {
 .badge {
   display: inline-block;
   padding: 8px 16px;
-  background: orange;
-  color: white;
+  background: rgb(236, 217, 184);
+  color: rgb(22, 22, 22);
   border-radius: 20px;
   font-weight: bold;
 
@@ -172,18 +244,19 @@ section {
   transform: translateX(20px);
 }
 
-
 .profile {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #e7e7ee;
 }
+
 .hover-text {
-  display: inline-block;   /* IMPORTANT for transform to work */
+  display: inline-block;
+  /* IMPORTANT for transform to work */
   color: orange;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .hover-text:hover {
@@ -319,7 +392,8 @@ button:hover {
 }
 
 .linkedin {
-  color: #0a66c2; /* LinkedIn blue */
+  color: #0a66c2;
+  /* LinkedIn blue */
   text-decoration: none;
   font-weight: 500;
 }
