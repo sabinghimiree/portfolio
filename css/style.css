@@ -48,7 +48,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #fff;
+  background: #f3f2f2;
   border-bottom: 1px solid #e7e7ee;
 }
 
@@ -157,17 +157,38 @@ section {
 }
 
 .badge {
-  border: 1px solid #e7e7ee;
-  background: #f9f9ff;
-  padding: 8px 10px;
-  border-radius: 999px;
-  font-size: 14px;
+  display: inline-block;
+  padding: 8px 16px;
+  background: orange;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+
+  transition: transform 0.3s ease;
 }
+
+/* Slide when mouse is over it */
+.badge:hover {
+  transform: translateX(20px);
+}
+
 
 .profile {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #e7e7ee;
+}
+.hover-text {
+  display: inline-block;   /* IMPORTANT for transform to work */
+  color: orange;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hover-text:hover {
+  transform: translateX(10px);
+  color: red;
 }
 
 .profile img {
